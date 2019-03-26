@@ -19,8 +19,8 @@
 // Input: none
 // Output: none
 void DAC_Init(void){
-	GPIO_PORTB_DIR_R = 0x0F;
-	GPIO_PORTB_DEN_R = 0x0F;
+	GPIO_PORTB_DIR_R = 0x1F;
+	GPIO_PORTB_DEN_R = 0x1F;
 }
 
 // **************DAC_Out*********************
@@ -30,5 +30,5 @@ void DAC_Init(void){
 // Output: none
 void DAC_Out(uint32_t data){
 	GPIO_PORTB_DATA_R &= 0x0F;
-	GPIO_PORTB_DATA_R |= data;
+	GPIO_PORTB_DATA_R = data;
 }

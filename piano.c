@@ -19,11 +19,10 @@
 // Input: none 
 // Output: none
 void Piano_Init(void){
-	int i=0;
 	GPIO_PORTE_DIR_R &= 0xF8;
 	GPIO_PORTE_DEN_R |= 0x07;
-	i++;
-	i++;
+
+	
 }
 
 // **************Piano_In*********************
@@ -33,7 +32,7 @@ void Piano_Init(void){
 //   0x01 is just Key0, 0x02 is just Key1, 0x04 is just Key2
 //   bit n is set if key n is pressed
 uint32_t Piano_In(void){
-  uint8_t data;
+  uint32_t data;
 	data = GPIO_PORTE_DATA_R;
 	data&=0x07;
 	return data;
